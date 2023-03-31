@@ -606,7 +606,9 @@ form .btn2{
 
 ---- */
 
-.contact{
+
+
+/*.contact{
     background:#f3f5fd;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
@@ -674,7 +676,78 @@ tr td:first-child{
 
 tr td{
     padding-top: 20px;
+}*/
+
+/* --------------contact---------------- */
+.contact-left{
+    flex-basis: 35%;
+
 }
+
+.contact-right{
+    flex-basis: 60%;
+
+}
+.contact-left p{
+    margin-top: 30px;
+
+}
+
+.contact-left p i{
+    color: black;
+    margin-right: 15px;
+    font-size: 25px;
+
+}
+
+
+.contact-right form{
+    width: 80%;
+}
+
+
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    position:relative;
+    outline:none;
+    background: #b6b3b3;
+    padding: 11px;
+    margin: 13px 0;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+form btn2{
+    padding: 14px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: #7f00ff;
+    transition: transform 0.5s;
+}
+
+.btn.btn2:hover{
+    color:black;
+    transform: translateY(-5px);
+}
+
+copyright{
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+
 
 /*------css for small screen-------*/
 
@@ -683,18 +756,7 @@ nav .fas{
 }
 
 @media only screen and (max-width: 600px){
-    .imgbox video{
-        background-image: url(avatar.png);
-    }
-    .multiText{
-        font-size: 16px;
-    }
-    .wrapper::before{
-        width: 13px;
-    }
-    .wrapper::after{
-        width: 11px;
-    }
+
     nav .fas{
         display:block;
         font-size: 25px;
@@ -720,5 +782,8 @@ nav .fas{
         top: 25px;
         left: 25px;
         cursor: pointer;
+    }
+    span h1{
+        width: 200px;
     }
 }

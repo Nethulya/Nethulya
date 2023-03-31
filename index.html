@@ -256,7 +256,7 @@
 
     </div>       ---------------->
 
-<!--------- CONTACT SECTION RETRY------------->
+<!--------- CONTACT SECTION RETRY------------
 
     <div id="contact" class="contact">
         <div style="background:#fdfdfd;" class="contact-container">
@@ -273,7 +273,7 @@
                                 <input type="text" placeholder="Albert Einstein">
                             </div>
 
-                            <!--<div class="input-group">
+                            <div class="input-group">
                                 <label>Phone</label>
                                 <input type="text" placeholder="0123456789">
                             </div>
@@ -281,7 +281,7 @@
                             <div class="input-group">
                                 <label>Email</label>
                                 <input type="email" placeholder="abc@gmail.com">
-                            </div> -->
+                            </div> 
 
                             <div style="background: #9db4c1;" class="input-group">
                                 <label style="background: #9db4c1;">Subject</label>
@@ -290,7 +290,7 @@
 
                         </div>
 
-                        <!---<button style="margin-top: 1%;" type="submit">Send</button>--->
+                        --<button style="margin-top: 1%;" type="submit">Send</button>--
 
                     </form>
                 </div>
@@ -312,7 +312,39 @@
             </div>
 
         </div>
+    </div>  -->
+
+    <!-- ---------------contact----------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title" style="font-size: 3em; padding-left: 70px;">Contact Me</h1>
+                <p><i style="padding-left: 70px;" class="fa-sharp fa-solid fa-envelope"></i>nethu.nov.2004@gmail.com</p>
+                <p><i style="padding-left: 70px;" class="fa-solid fa-phone-volume"></i>+94 74 017 5493</p>
+               
+            </div>
+            <div class="contact-right"></div>
+            <form name="submit-to-google-sheet" style="padding-left: 70px; padding-right: 50px;">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="E-mail Address" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <div class="Submit">
+                    <button type="submit" class="btn btn2">Submit</button>
+
+                </div>
+                
+            </form>
+            <span id="msg"></span>
+        </div>
     </div>
+    <div class="copyright">
+        <p style="text-align: center; margin-top: -10%; padding-bottom: 0%;">Copyright ©. NETHULYA AISHWARINEE SOORIARACHCHI <i class="cright"></i></p>
+    </div>
+</div>
+
+
+
 
 <script>
     var sidemenu = document.getElementById("sidemenu");
@@ -326,6 +358,27 @@
     }
 </script>
 
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxsGrCsoKgSh2wphv2OPsklbsoo4qJA1yiI3lyHnTSaXXUcANCJsQnS4CnFp59oOzQa/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response =>{
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        
+        })
+
+        .catch(error => console.error('Error!', error.message))
+        
+    })
+</script>
 
 </body>
 </html>
